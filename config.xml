@@ -44,7 +44,6 @@
         <allow-navigation href="http://localhost:8080/*" />
         <allow-intent href="http://*/*" />
         <allow-intent href="https://*/*" />
-        <preference name="CordovaWebViewEngine" value="CDVUIWebViewEngine" />
         <config-file parent="NSPhotoLibraryUsageDescription" platform="ios" target="*-Info.plist">
             <string>You can upload your profile picture using your Photo Library</string>
         </config-file>
