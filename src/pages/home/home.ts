@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ActionSheetController } from 'ionic-angular';
+import { NavController, ActionSheetController, normalizeURL } from 'ionic-angular';
 import { Camera } from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Crop } from '@ionic-native/crop';
@@ -71,6 +71,12 @@ export class HomePage {
         this.cropService
           .crop(data, { quality: 75 })
           .then((newImage) => {
+            console.log('newImage...')
+            console.log(newImage)
+            let newFilePath = newImage.split("//")[1]
+            console.log('newImage.split("//", 1)[1]')
+            console.log('newFilePath...')
+            console.log(newFilePath)
             this.photos.push(newImage);
           }, error => console.error("Error cropping image", error));
       }, function (error) {
